@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">MWnotes</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">MW notes</string>
+    <string name="nav_header_subtitle">Bem vindo viajante.</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- VALORES DO ARQUIVO ACTIVITY_NOTE.XML -->
+
+    <string name="Tag">Tag</string>
+    <string name="Note">Note</string>
+    <string name="Código">Código</string>
+    <string name="Usuário">Usuário</string>
+    <string name="Salvar">Salvar</string>
+    <string name="Achar">Achar</string>
+    <string name="Atualizar">Atualizar</string>
+    <string name="Deletar">Deletar</string>
+
+
+    <!--FIM DE VALORES DO ARQUIVO ACTIVITY_NOTE.XML -->
+
+    <!-- VALORES DO ARQUIVO ACTIVITY_LOGIN.XML -->
+
+    <string name="Nome">Nome</string>
+    <string name="Senha">Senha</string>
+    <string name="Entrar">Entrar</string>
+
+    <!--FIM DE VALORES DO ARQUIVO ACTIVITY_LOGIN.XML -->
+
+</resources>
