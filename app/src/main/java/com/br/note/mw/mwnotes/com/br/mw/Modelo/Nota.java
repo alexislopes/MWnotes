@@ -1,11 +1,14 @@
 package com.br.note.mw.mwnotes.com.br.mw.Modelo;
 
+import java.util.List;
+
 public class Nota {
 
     private int codigo;
     private String tag;
     private String nota;
     private int usuario;
+    private List<Usuario> colaboradores;
 
     public Nota(){}
 
