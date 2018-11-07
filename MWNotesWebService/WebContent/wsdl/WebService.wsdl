@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://webservices" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://webservices" xmlns:intf="http://webservices" xmlns:tns1="http://modelo" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://webservices" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://modelo"/>
+   <element name="verificaUsuario">
+    <complexType>
+     <sequence>
+      <element name="usuario" type="tns1:Usuario"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="verificaUsuarioResponse">
+    <complexType>
+     <sequence>
+      <element name="verificaUsuarioReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="achaUsuario">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:long"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="achaUsuarioResponse">
+    <complexType>
+     <sequence>
+      <element name="achaUsuarioReturn" type="tns1:Usuario"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insereUsuario">
+    <complexType>
+     <sequence>
+      <element name="nome" type="xsd:string"/>
+      <element name="usuario" type="xsd:string"/>
+      <element name="senha" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insereUsuarioResponse">
+    <complexType>
+     <sequence>
+      <element name="insereUsuarioReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://modelo" xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="Usuario">
+    <sequence>
+     <element name="id" nillable="true" type="xsd:long"/>
+     <element name="nome" nillable="true" type="xsd:string"/>
+     <element name="senha" nillable="true" type="xsd:string"/>
+     <element name="usuario" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="insereUsuarioRequest">
+
+      <wsdl:part element="impl:insereUsuario" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="verificaUsuarioRequest">
+
+      <wsdl:part element="impl:verificaUsuario" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="achaUsuarioRequest">
+
+      <wsdl:part element="impl:achaUsuario" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="verificaUsuarioResponse">
+
+      <wsdl:part element="impl:verificaUsuarioResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="achaUsuarioResponse">
+
+      <wsdl:part element="impl:achaUsuarioResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="insereUsuarioResponse">
+
+      <wsdl:part element="impl:insereUsuarioResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="WebService">
+
+      <wsdl:operation name="verificaUsuario">
+
+         <wsdl:input message="impl:verificaUsuarioRequest" name="verificaUsuarioRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:verificaUsuarioResponse" name="verificaUsuarioResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="achaUsuario">
+
+         <wsdl:input message="impl:achaUsuarioRequest" name="achaUsuarioRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:achaUsuarioResponse" name="achaUsuarioResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="insereUsuario">
+
+         <wsdl:input message="impl:insereUsuarioRequest" name="insereUsuarioRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:insereUsuarioResponse" name="insereUsuarioResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="WebServiceSoapBinding" type="impl:WebService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="verificaUsuario">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="verificaUsuarioRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="verificaUsuarioResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="achaUsuario">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="achaUsuarioRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="achaUsuarioResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="insereUsuario">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="insereUsuarioRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="insereUsuarioResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="WebServiceService">
+
+      <wsdl:port binding="impl:WebServiceSoapBinding" name="WebService">
+
+         <wsdlsoap:address location="http://192.168.15.10:8080/MVNotesWebService/services/WebService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

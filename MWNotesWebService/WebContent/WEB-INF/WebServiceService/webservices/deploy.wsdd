@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from WebServiceService WSDL service -->
+
+  <service name="WebService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://webservices"/>
+      <parameter name="wsdlServiceElement" value="WebServiceService"/>
+      <parameter name="schemaQualified" value="http://modelo,http://webservices"/>
+      <parameter name="wsdlServicePort" value="WebService"/>
+      <parameter name="className" value="webservices.WebService"/>
+      <parameter name="wsdlPortType" value="WebService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://webservices" xmlns:retNS="http://webservices" xmlns:rtns="http://modelo" name="achaUsuario" qname="operNS:achaUsuario" returnQName="retNS:achaUsuarioReturn" returnType="rtns:Usuario" soapAction="">
+        <parameter xmlns:pns="http://webservices" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:long"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices" xmlns:retNS="http://webservices" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="verificaUsuario" qname="operNS:verificaUsuario" returnQName="retNS:verificaUsuarioReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://webservices" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:usuario" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:senha" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices" xmlns:retNS="http://webservices" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="insereUsuario" qname="operNS:insereUsuario" returnQName="retNS:insereUsuarioReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://webservices" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:nome" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:usuario" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:senha" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="insereUsuario achaUsuario verificaUsuario"/>
+
+      <typeMapping xmlns:ns="http://modelo" qname="ns:Usuario" type="java:modelo.Usuario" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>
