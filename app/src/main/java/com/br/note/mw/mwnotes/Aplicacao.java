@@ -3,7 +3,6 @@ package com.br.note.mw.mwnotes;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
@@ -24,42 +23,42 @@ import com.br.note.mw.mwnotes.com.br.mw.fragments.*;
 public class Aplicacao extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     public Button salvar;
-    /*private Button salvar, deletar, atualizar, achar, muda;
-    private EditText codigo, tag, nota, usuario;
-    private Nota nova;
-
-    private ListView listaNotas;
-
-    private ArrayList<String> arrayList;
-    private ArrayAdapter<String> arrayAdapter;
-
-    NotaDAOMySQLite db = new NotaDAOMySQLite();*/
+    public FloatingActionButton fab;
+    Toolbar toolbar;
+    DrawerLayout drawer;
+    NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        ligaJavaXML();
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "In developing", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent mudarTela = new Intent(Aplicacao.this, Note.class);
+                startActivity(mudarTela);
             }
         });
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        setSupportActionBar(toolbar);
+
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    public void ligaJavaXML(){
+        fab = (FloatingActionButton) findViewById(R.id.fab);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
+
     }
 
     @Override
@@ -104,7 +103,7 @@ public class Aplicacao extends AppCompatActivity implements NavigationView.OnNav
             /*FragmentTransaction ft = fm.beginTransaction();
             ft.replace(R.id.mainFragment, new NoteFrag());
             ft.commit();*/
-            Intent intent = new Intent(this, NoteActivity.class);
+            Intent intent = new Intent(this, Note.class);
             startActivity(intent);
             //nota();
         } else if (id == R.id.nav_blocks) {

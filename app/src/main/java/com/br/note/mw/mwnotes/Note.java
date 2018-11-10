@@ -15,7 +15,7 @@ import com.br.note.mw.mwnotes.com.br.mw.Modelo.Nota;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NoteActivity extends AppCompatActivity {
+public class Note extends AppCompatActivity {
 
     private Button salvar, deletar, atualizar, achar;
     private EditText codigo, tag, nota, usuario;
@@ -117,7 +117,7 @@ public class NoteActivity extends AppCompatActivity {
         List<Nota> notas = db.achaTodos();
 
         arrayList = new ArrayList<String>();
-        arrayAdapter = new ArrayAdapter<String>(NoteActivity.this, android.R.layout.simple_list_item_1, arrayList);
+        arrayAdapter = new ArrayAdapter<String>(Note.this, android.R.layout.simple_list_item_1, arrayList);
 
         listaNotas.setAdapter(arrayAdapter);
 

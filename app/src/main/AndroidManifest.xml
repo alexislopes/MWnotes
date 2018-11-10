@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".NoteActivity"><intent-filter>
+        <activity android:name=".Note"><intent-filter>
         <action android:name="android.intent.action.DEFAULT" />
     </intent-filter></activity>
 
@@ -31,8 +31,9 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-                <!-- <action android:name="android.intent.action.DEFAULT" /> -->
+                <action android:name="android.intent.action.DEFAULT" />
         </intent-filter></activity>
+        <activity android:name=".Cadastro" />
 
     </application>
 

@@ -8,11 +8,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.br.note.mw.mwnotes.Aplicacao;
-import com.br.note.mw.mwnotes.WSCliente;
+import com.br.note.mw.mwnotes.com.br.mw.Modelo.Usuario;
 
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -20,12 +18,12 @@ import java.io.IOException;
 
 public class Login extends AppCompatActivity implements Runnable {
 
-  Button btnLogin;
+  Button btnLogin, btnCadastrar;
   EditText nameInput, passwordInput;
   Handler handler = new Handler();
   ProgressDialog janela;
-  //ProgressBar barra;
   Thread tarefa;
+  Usuario usuario;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -38,26 +36,38 @@ public class Login extends AppCompatActivity implements Runnable {
       @Override
       public void onClick(View view) {
         janela = new ProgressDialog(Login.this);
-        //barra = new ProgressBar(Login.this);
         janela.setMessage("Verificando os Dados do Servidor");
         janela.show();
         tarefa = new Thread(Login.this);
         tarefa.start();
       }
     });
+
+    btnCadastrar.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent mudaTela = new Intent(Login.this, Cadastro.class);
+            startActivity(mudaTela);
+        }
+    });
   }
 
   public void ligaJavaXML() {
-    btnLogin = (Button) findViewById(R.id.btnLogin);
-    nameInput = (EditText) findViewById(R.id.nameInput);
-    passwordInput = (EditText) findViewById(R.id.passwordInput);
+    btnLogin = findViewById(R.id.btnLogin);
+    btnCadastrar = findViewById(R.id.btnCadastrar);
+    nameInput =  findViewById(R.id.usuarioInput);
+    passwordInput = findViewById(R.id.senhaInput);
   }
 
   @Override
   public void run() {
-    WSCliente cliente = new WSCliente();
+    WSClienteUsuario cliente = new WSClienteUsuario();
+    usuario = new Usuario(nameInput.getText().toString(), passwordInput.getText().toString());
+    String usuarioToJson = usuario.toJson();
+    System.out.println(usuarioToJson);
+
     try {
-      final boolean resposta = cliente.verificaUsuario(nameInput.getText().toString(), passwordInput.getText().toString());
+      final boolean resposta = cliente.verificaUsuario(usuarioToJson);
       handler.post(new Runnable() {
         @Override
         public void run() {

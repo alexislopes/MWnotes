@@ -20,7 +20,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/Entrar"
+            android:text="Cadastro"
             android:textSize="40dp" />
 
 
@@ -29,7 +29,18 @@
             android:layout_height="match_parent">
 
             <EditText
-                android:id="@+id/usuarioInput"
+                android:id="@+id/nameInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/Nome" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/userInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/Usuário" />
@@ -42,7 +53,7 @@
             app:passwordToggleEnabled="true">
 
             <EditText
-                android:id="@+id/senhaInput"
+                android:id="@+id/passwordInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/Senha"
@@ -50,15 +61,7 @@
         </android.support.design.widget.TextInputLayout>
 
         <Button
-            android:id="@+id/btnLogin"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Entrar"
-            android:textColor="#1E91D6" />
-
-        <Button
-            android:id="@+id/btnCadastrar"
+            android:id="@+id/btnCadastro"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

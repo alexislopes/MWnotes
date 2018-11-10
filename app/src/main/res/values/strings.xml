@@ -29,4 +29,9 @@
 
     <!--FIM DE VALORES DO ARQUIVO ACTIVITY_LOGIN.XML -->
 
+    <!-- VALORES DO ARQUIVO ACTIVITY_LOGIN.XML -->
+    <string name="Cadastrar">CADASTRAR</string>
+
+    <!--FIM DE VALORES DO ARQUIVO ACTIVITY_CADASTRO.XML -->
+
 </resources>
