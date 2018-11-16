@@ -61,9 +61,9 @@ public class Login extends AppCompatActivity implements Runnable {
 
   @Override
   public void run() {
-    WSClienteUsuario cliente = new WSClienteUsuario();
+    WSCliente cliente = new WSCliente();
     usuario = new Usuario(nameInput.getText().toString(), passwordInput.getText().toString());
-    String usuarioToJson = usuario.toJson();
+    final String usuarioToJson = usuario.toJson();
     System.out.println(usuarioToJson);
 
     try {
@@ -73,7 +73,7 @@ public class Login extends AppCompatActivity implements Runnable {
         public void run() {
           if(resposta){
             Intent principal = new Intent(Login.this, Aplicacao.class);
-            principal.putExtra("usuario", nameInput.getText().toString());
+            principal.putExtra("usuario", usuarioToJson);
             startActivity(principal);
           }else {
             Toast.makeText(Login.this, "Login ou Senha inválidos", Toast.LENGTH_SHORT).show();

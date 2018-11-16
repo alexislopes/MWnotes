@@ -1,5 +1,6 @@
 package com.br.note.mw.mwnotes;
 
+import com.br.note.mw.mwnotes.com.br.mw.Modelo.Nota;
 import com.br.note.mw.mwnotes.com.br.mw.Modelo.Usuario;
 
 import org.junit.Before;
@@ -15,10 +16,12 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
 
     Usuario usuario;
+    Nota nota;
 
     @Before
     public void setUp(){
         usuario = new Usuario();
+        nota = new Nota();
     }
 
     @Test
@@ -42,5 +45,12 @@ public class ExampleUnitTest {
         System.out.println(usuario.fromJson(usuario.toJson()).getNome());
         System.out.println(usuario.fromJson(usuario.toJson()).getUsuario());
         System.out.println(usuario.fromJson(usuario.toJson()).getSenha());
+    }
+
+    @Test
+    public void toJsonNotaTeste(){
+        nota.setTitulo("Teste");
+        nota.setConteudo("Isso é um teste!");
+        System.out.println(nota.toJson());
     }
 }

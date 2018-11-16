@@ -1,57 +1,65 @@
 package com.br.note.mw.mwnotes.com.br.mw.Modelo;
 
+import com.google.gson.Gson;
+
 import java.util.List;
 
 public class Nota {
 
     private int codigo;
-    private String tag;
-    private String nota;
-    private int usuario;
+    private String titulo;
+    private String conteudo;
+    private int dono;
     private List<Usuario> colaboradores;
 
     public Nota(){}
 
-    public Nota(int codigo, String tag, String nota, int usuario){
+    public Nota(int codigo, String titulo, String conteudo, int dono){
         this.codigo = codigo;
-        this.tag = tag;
-        this.nota = nota;
-        this.usuario = usuario;
+        this.titulo = titulo;
+        this.conteudo = conteudo;
+        this.dono = dono;
     }
 
-    public Nota(int codigo, String tag, String nota){
+    public Nota(int codigo, String titulo, String conteudo){
         this.codigo = codigo;
-        this.tag = tag;
-        this.nota = nota;
+        this.titulo = titulo;
+        this.conteudo = conteudo;
     }
 
-    public Nota(String tag, String nota) {
-        this.tag = tag;
-        this.nota = nota;
+    public Nota(String titulo, String conteudo) {
+        this.titulo = titulo;
+        this.conteudo = conteudo;
     }
 
-    public String getTag() {
-        return tag;
+    public Nota(String titulo, String conteudo, int dono) {
+        this.titulo = titulo;
+        this.conteudo = conteudo;
+        this.dono = dono;
     }
 
-    public void setTag(String tag) {
-        this.tag = tag;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public String getNota() {
-        return nota;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
-    public void setNota(String nota) {
-        this.nota = nota;
+    public String getConteudo() {
+        return conteudo;
     }
 
-    public int getUsuario() {
-        return usuario;
+    public void setConteudo(String conteudo) {
+        this.conteudo = conteudo;
     }
 
-    public void setUsuario(int usuario) {
-        this.usuario = usuario;
+    public int getDono() {
+        return dono;
+    }
+
+    public void setDono(int dono) {
+        this.dono = dono;
     }
 
     public int getCodigo() {
@@ -60,5 +68,15 @@ public class Nota {
 
     public void setCodigo(int codigo) {
         this.codigo = codigo;
+    }
+
+    public String toJson(){
+        Gson json = new Gson();
+        return json.toJson(this);
+    }
+
+    public Nota fromJosn(String notaJson){
+        Gson json = new Gson();
+        return json.fromJson(notaJson, Nota.class);
     }
 }

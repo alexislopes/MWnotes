@@ -1,0 +1,63 @@
+listaNotas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String conteudo = (String) listaNotas.getItemAtPosition(i);
+                String id = conteudo.substring(0, conteudo.indexOf(" -"));
+
+                Nota achada = db.achaNotaPorCodigo(Integer.parseInt(id));
+
+                codigo.setText(String.valueOf(achada.getCodigo()));
+                tag.setText(String.valueOf(achada.getTitulo()));
+                nota.setText(String.valueOf(achada.getConteudo()));
+                usuario.setText(String.valueOf(achada.getDono()));
+
+            }
+        });
+
+
+deletar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //db.deletaNota(String.valueOf(tag.getText()));
+
+                listaNotas();
+
+                codigo.setText("");
+                tag.setText("");
+                nota.setText("");
+                usuario.setText("");
+            }
+        });
+
+
+
+atualizar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int id = Integer.parseInt(String.valueOf(codigo.getText()));
+                int user = Integer.parseInt(String.valueOf(usuario.getText()));
+                //db.atualizaNota(id, String.valueOf(tag.getText()), String.valueOf(nota.getText()), user);
+
+                listaNotas();
+
+                codigo.setText("");
+                tag.setText("");
+                nota.setText("");
+                usuario.setText("");
+            }
+        });
+
+public void listaNotas() {
+        //List<Nota> notas = db.achaTodos();
+
+        arrayList = new ArrayList<String>();
+        arrayAdapter = new ArrayAdapter<String>(Note.this, android.R.layout.simple_list_item_1, arrayList);
+
+        listaNotas.setAdapter(arrayAdapter);
+
+        //for (Nota nota : notas) {
+        //    //Log.d("Lista", "\nID: " + c.getCodigo() + " Nome: " + c.getNome());
+        //    arrayList.add(nota.getCodigo() + " - " + nota.getTitulo());
+            arrayAdapter.notifyDataSetChanged();
+        //}
+    }
