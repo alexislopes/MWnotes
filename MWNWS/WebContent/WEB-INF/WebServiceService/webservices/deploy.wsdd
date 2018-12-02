@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from WebServiceService WSDL service -->
+
+  <service name="WebService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://webservices"/>
+      <parameter name="wsdlServiceElement" value="WebServiceService"/>
+      <parameter name="schemaQualified" value="http://webservices"/>
+      <parameter name="wsdlServicePort" value="WebService"/>
+      <parameter name="className" value="webservices.WebService"/>
+      <parameter name="wsdlPortType" value="WebService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://webservices" xmlns:retNS="http://webservices" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="achaUsuarioPorId" qname="operNS:achaUsuarioPorId" returnQName="retNS:achaUsuarioPorIdReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:usuarioJson" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices" xmlns:retNS="http://webservices" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="verificaNota" qname="operNS:verificaNota" returnQName="retNS:verificaNotaReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://webservices" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:notaJson" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices" xmlns:retNS="http://webservices" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="verificaUsuario" qname="operNS:verificaUsuario" returnQName="retNS:verificaUsuarioReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://webservices" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:usuarioJson" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices" xmlns:retNS="http://webservices" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="insereUsuario" qname="operNS:insereUsuario" returnQName="retNS:insereUsuarioReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://webservices" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:usuarioJson" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices" xmlns:retNS="http://webservices" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="insereNota" qname="operNS:insereNota" returnQName="retNS:insereNotaReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://webservices" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:notaJson" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices" xmlns:retNS="http://webservices" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="achaTodos" qname="operNS:achaTodos" returnQName="retNS:achaTodosReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://webservices" xmlns:retNS="http://webservices" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="atualizaNota" qname="operNS:atualizaNota" returnQName="retNS:atualizaNotaReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://webservices" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:notaJson" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices" xmlns:retNS="http://webservices" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deletaNota" qname="operNS:deletaNota" returnQName="retNS:deletaNotaReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://webservices" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:notaJson" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices" xmlns:retNS="http://webservices" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="achaUsuarioPorNome" qname="operNS:achaUsuarioPorNome" returnQName="retNS:achaUsuarioPorNomeReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:usuarioJson" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices" xmlns:retNS="http://webservices" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="achaUsuarioPorUsuario" qname="operNS:achaUsuarioPorUsuario" returnQName="retNS:achaUsuarioPorUsuarioReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:usuarioJson" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices" xmlns:retNS="http://webservices" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="achaNotaPorUsuario" qname="operNS:achaNotaPorUsuario" returnQName="retNS:achaNotaPorUsuarioReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:notaJson" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices" xmlns:retNS="http://webservices" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="achaNotaPorTitulo" qname="operNS:achaNotaPorTitulo" returnQName="retNS:achaNotaPorTituloReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:notaJson" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices" xmlns:retNS="http://webservices" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="achaNotaPorCodigo" qname="operNS:achaNotaPorCodigo" returnQName="retNS:achaNotaPorCodigoReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:notaJson" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="verificaNota insereUsuario achaNotaPorCodigo deletaNota verificaUsuario achaUsuarioPorId achaTodos atualizaNota achaUsuarioPorUsuario insereNota achaNotaPorTitulo achaUsuarioPorNome achaNotaPorUsuario"/>
+
+  </service>
+</deployment>

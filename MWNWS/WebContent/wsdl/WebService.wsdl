@@ -1,0 +1,806 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://webservices" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://webservices" xmlns:intf="http://webservices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://webservices" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="achaUsuarioPorId">
+    <complexType>
+     <sequence>
+      <element name="usuarioJson" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="achaUsuarioPorIdResponse">
+    <complexType>
+     <sequence>
+      <element name="achaUsuarioPorIdReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="verificaNota">
+    <complexType>
+     <sequence>
+      <element name="notaJson" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="verificaNotaResponse">
+    <complexType>
+     <sequence>
+      <element name="verificaNotaReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="verificaUsuario">
+    <complexType>
+     <sequence>
+      <element name="usuarioJson" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="verificaUsuarioResponse">
+    <complexType>
+     <sequence>
+      <element name="verificaUsuarioReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insereUsuario">
+    <complexType>
+     <sequence>
+      <element name="usuarioJson" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insereUsuarioResponse">
+    <complexType>
+     <sequence>
+      <element name="insereUsuarioReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insereNota">
+    <complexType>
+     <sequence>
+      <element name="notaJson" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insereNotaResponse">
+    <complexType>
+     <sequence>
+      <element name="insereNotaReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="achaTodos">
+    <complexType/>
+   </element>
+   <element name="achaTodosResponse">
+    <complexType>
+     <sequence>
+      <element name="achaTodosReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="atualizaNota">
+    <complexType>
+     <sequence>
+      <element name="notaJson" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="atualizaNotaResponse">
+    <complexType>
+     <sequence>
+      <element name="atualizaNotaReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deletaNota">
+    <complexType>
+     <sequence>
+      <element name="notaJson" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deletaNotaResponse">
+    <complexType>
+     <sequence>
+      <element name="deletaNotaReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="achaUsuarioPorNome">
+    <complexType>
+     <sequence>
+      <element name="usuarioJson" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="achaUsuarioPorNomeResponse">
+    <complexType>
+     <sequence>
+      <element name="achaUsuarioPorNomeReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="achaUsuarioPorUsuario">
+    <complexType>
+     <sequence>
+      <element name="usuarioJson" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="achaUsuarioPorUsuarioResponse">
+    <complexType>
+     <sequence>
+      <element name="achaUsuarioPorUsuarioReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="achaNotaPorUsuario">
+    <complexType>
+     <sequence>
+      <element name="notaJson" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="achaNotaPorUsuarioResponse">
+    <complexType>
+     <sequence>
+      <element name="achaNotaPorUsuarioReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="achaNotaPorTitulo">
+    <complexType>
+     <sequence>
+      <element name="notaJson" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="achaNotaPorTituloResponse">
+    <complexType>
+     <sequence>
+      <element name="achaNotaPorTituloReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="achaNotaPorCodigo">
+    <complexType>
+     <sequence>
+      <element name="notaJson" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="achaNotaPorCodigoResponse">
+    <complexType>
+     <sequence>
+      <element name="achaNotaPorCodigoReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="achaUsuarioPorIdRequest">
+
+      <wsdl:part element="impl:achaUsuarioPorId" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="insereNotaRequest">
+
+      <wsdl:part element="impl:insereNota" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="achaNotaPorTituloRequest">
+
+      <wsdl:part element="impl:achaNotaPorTitulo" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deletaNotaResponse">
+
+      <wsdl:part element="impl:deletaNotaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="achaUsuarioPorUsuarioResponse">
+
+      <wsdl:part element="impl:achaUsuarioPorUsuarioResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="achaNotaPorUsuarioRequest">
+
+      <wsdl:part element="impl:achaNotaPorUsuario" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="achaNotaPorCodigoRequest">
+
+      <wsdl:part element="impl:achaNotaPorCodigo" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="achaTodosResponse">
+
+      <wsdl:part element="impl:achaTodosResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="achaTodosRequest">
+
+      <wsdl:part element="impl:achaTodos" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="achaNotaPorCodigoResponse">
+
+      <wsdl:part element="impl:achaNotaPorCodigoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="achaUsuarioPorIdResponse">
+
+      <wsdl:part element="impl:achaUsuarioPorIdResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="atualizaNotaResponse">
+
+      <wsdl:part element="impl:atualizaNotaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deletaNotaRequest">
+
+      <wsdl:part element="impl:deletaNota" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="achaUsuarioPorNomeRequest">
+
+      <wsdl:part element="impl:achaUsuarioPorNome" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="verificaNotaRequest">
+
+      <wsdl:part element="impl:verificaNota" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="achaUsuarioPorUsuarioRequest">
+
+      <wsdl:part element="impl:achaUsuarioPorUsuario" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="insereNotaResponse">
+
+      <wsdl:part element="impl:insereNotaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="verificaUsuarioResponse">
+
+      <wsdl:part element="impl:verificaUsuarioResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="atualizaNotaRequest">
+
+      <wsdl:part element="impl:atualizaNota" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="achaNotaPorTituloResponse">
+
+      <wsdl:part element="impl:achaNotaPorTituloResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="verificaNotaResponse">
+
+      <wsdl:part element="impl:verificaNotaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="insereUsuarioRequest">
+
+      <wsdl:part element="impl:insereUsuario" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="verificaUsuarioRequest">
+
+      <wsdl:part element="impl:verificaUsuario" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="achaNotaPorUsuarioResponse">
+
+      <wsdl:part element="impl:achaNotaPorUsuarioResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="insereUsuarioResponse">
+
+      <wsdl:part element="impl:insereUsuarioResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="achaUsuarioPorNomeResponse">
+
+      <wsdl:part element="impl:achaUsuarioPorNomeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="WebService">
+
+      <wsdl:operation name="achaUsuarioPorId">
+
+         <wsdl:input message="impl:achaUsuarioPorIdRequest" name="achaUsuarioPorIdRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:achaUsuarioPorIdResponse" name="achaUsuarioPorIdResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="verificaNota">
+
+         <wsdl:input message="impl:verificaNotaRequest" name="verificaNotaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:verificaNotaResponse" name="verificaNotaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="verificaUsuario">
+
+         <wsdl:input message="impl:verificaUsuarioRequest" name="verificaUsuarioRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:verificaUsuarioResponse" name="verificaUsuarioResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="insereUsuario">
+
+         <wsdl:input message="impl:insereUsuarioRequest" name="insereUsuarioRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:insereUsuarioResponse" name="insereUsuarioResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="insereNota">
+
+         <wsdl:input message="impl:insereNotaRequest" name="insereNotaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:insereNotaResponse" name="insereNotaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="achaTodos">
+
+         <wsdl:input message="impl:achaTodosRequest" name="achaTodosRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:achaTodosResponse" name="achaTodosResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="atualizaNota">
+
+         <wsdl:input message="impl:atualizaNotaRequest" name="atualizaNotaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:atualizaNotaResponse" name="atualizaNotaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deletaNota">
+
+         <wsdl:input message="impl:deletaNotaRequest" name="deletaNotaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:deletaNotaResponse" name="deletaNotaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="achaUsuarioPorNome">
+
+         <wsdl:input message="impl:achaUsuarioPorNomeRequest" name="achaUsuarioPorNomeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:achaUsuarioPorNomeResponse" name="achaUsuarioPorNomeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="achaUsuarioPorUsuario">
+
+         <wsdl:input message="impl:achaUsuarioPorUsuarioRequest" name="achaUsuarioPorUsuarioRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:achaUsuarioPorUsuarioResponse" name="achaUsuarioPorUsuarioResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="achaNotaPorUsuario">
+
+         <wsdl:input message="impl:achaNotaPorUsuarioRequest" name="achaNotaPorUsuarioRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:achaNotaPorUsuarioResponse" name="achaNotaPorUsuarioResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="achaNotaPorTitulo">
+
+         <wsdl:input message="impl:achaNotaPorTituloRequest" name="achaNotaPorTituloRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:achaNotaPorTituloResponse" name="achaNotaPorTituloResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="achaNotaPorCodigo">
+
+         <wsdl:input message="impl:achaNotaPorCodigoRequest" name="achaNotaPorCodigoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:achaNotaPorCodigoResponse" name="achaNotaPorCodigoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="WebServiceSoapBinding" type="impl:WebService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="achaUsuarioPorId">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="achaUsuarioPorIdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="achaUsuarioPorIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="verificaNota">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="verificaNotaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="verificaNotaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="verificaUsuario">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="verificaUsuarioRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="verificaUsuarioResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="insereUsuario">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="insereUsuarioRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="insereUsuarioResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="insereNota">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="insereNotaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="insereNotaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="achaTodos">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="achaTodosRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="achaTodosResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="atualizaNota">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="atualizaNotaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="atualizaNotaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deletaNota">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deletaNotaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deletaNotaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="achaUsuarioPorNome">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="achaUsuarioPorNomeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="achaUsuarioPorNomeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="achaUsuarioPorUsuario">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="achaUsuarioPorUsuarioRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="achaUsuarioPorUsuarioResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="achaNotaPorUsuario">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="achaNotaPorUsuarioRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="achaNotaPorUsuarioResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="achaNotaPorTitulo">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="achaNotaPorTituloRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="achaNotaPorTituloResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="achaNotaPorCodigo">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="achaNotaPorCodigoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="achaNotaPorCodigoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="WebServiceService">
+
+      <wsdl:port binding="impl:WebServiceSoapBinding" name="WebService">
+
+         <wsdlsoap:address location="http://localhost:8080/MWNWS/services/WebService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
