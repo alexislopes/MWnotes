@@ -1,7 +1,7 @@
 package com.br.note.mw.mwnotes;
 
-import com.br.note.mw.mwnotes.com.br.mw.Modelo.Nota;
-import com.br.note.mw.mwnotes.com.br.mw.Modelo.Usuario;
+import com.br.Modelo.Nota;
+import com.br.Modelo.Usuario;
 
 import org.junit.Before;
 import org.junit.Test;
