@@ -39,12 +39,13 @@ public class ExampleUnitTest {
 
     @Test
     public void fromJsonUsuarioTeste(){
-        usuario.setNome("Alexis");
-        usuario.setUsuario("alexis");
-        usuario.setSenha("1234");
-        System.out.println(usuario.fromJson(usuario.toJson()).getNome());
-        System.out.println(usuario.fromJson(usuario.toJson()).getUsuario());
-        System.out.println(usuario.fromJson(usuario.toJson()).getSenha());
+        String usuarioJson = "{'id':3,'nome':'Alexis','usuario':'alexis','senha':'1234'}";
+        Usuario iai = usuario.fromJson(usuarioJson);
+        System.out.println(usuario.fromJson(usuarioJson));
+        System.out.println(usuario.fromJson(iai.toJson()).getUsuario());
+        System.out.println(usuario.fromJson(iai.toJson()).getSenha());
+        System.out.println(usuario.fromJson(iai.toJson()).getNome());
+        System.out.println(usuario.fromJson(iai.toJson()).getId());
     }
 
     @Test

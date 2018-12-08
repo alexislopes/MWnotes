@@ -16,17 +16,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:padding="16dp"
         android:hint="@string/Tag"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:background="@drawable/white_border"/>
 
     <EditText
         android:id="@+id/noteField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:padding="16dp"
         android:hint="@string/Note"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:background="@drawable/white_border"/>
 
+        <!--
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -53,6 +58,20 @@
             android:inputType="textPersonName" />
 
     </LinearLayout>
+    -->
+        <com.seatgeek.placesautocomplete.PlacesAutocompleteTextView
+            android:id="@+id/autocomplete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:hint="@string/Endereço"
+            android:padding="16dp"
+            android:background="@drawable/white_border"
+            app:pacv_adapterClass="com.br.TestPlacesAutocompleteAdapter"
+            app:pacv_clearEnabled="true"
+            app:pacv_googleMapsApiKey="@string/google_maps_api_key"
+            app:pacv_languageCode="en"
+            app:pacv_resultType="no_type" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -65,6 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/Salvar" />
+        <!--
 
         <Button
             android:id="@+id/btnFind"
@@ -86,6 +106,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/Deletar" />
+            -->
     </LinearLayout>
 
     <ListView

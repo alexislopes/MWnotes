@@ -67,13 +67,8 @@ public class Usuario {
     }
 
     public Usuario fromJson(String usuarioJson){
-
         Gson json = new Gson();
-        Usuario novo = new Usuario();
-
-        novo = json.fromJson(usuarioJson, Usuario.class);
-
-        return  novo;
+        return json.fromJson(usuarioJson, Usuario.class);
     }
 
 

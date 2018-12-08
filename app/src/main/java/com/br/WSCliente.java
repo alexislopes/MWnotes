@@ -12,6 +12,8 @@ import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import okhttp3.OkHttpClient;
+
 public class WSCliente implements UsuarioDAO, NotaDAO {
 
     private SoapObject soap;
@@ -21,7 +23,7 @@ public class WSCliente implements UsuarioDAO, NotaDAO {
 
     public WSCliente(){
         envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
-        http = new HttpTransportSE("http://172.16.2.176:8080/MWNWS/services/WebService?wsdl");
+        http = new HttpTransportSE("http://192.168.15.15:8080/MWNWS/services/WebService?wsdl");
     }
 
 

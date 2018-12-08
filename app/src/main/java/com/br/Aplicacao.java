@@ -104,7 +104,9 @@ public class Aplicacao extends AppCompatActivity implements NavigationView.OnNav
             /*FragmentTransaction ft = fm.beginTransaction();
             ft.replace(R.id.mainFragment, new NoteFrag());
             ft.commit();*/
+            Intent pegaExtra = getIntent();
             Intent intent = new Intent(Aplicacao.this, Note.class);
+            intent.putExtra("usuario", pegaExtra.getStringExtra("usuario"));
             startActivity(intent);
             //nota();
         } else if (id == R.id.nav_blocks) {

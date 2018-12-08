@@ -11,6 +11,7 @@ public class Nota {
     private String conteudo;
     private int dono;
     private List<Usuario> colaboradores;
+    private String endereco;
 
     public Nota(){}
 
@@ -27,9 +28,10 @@ public class Nota {
         this.conteudo = conteudo;
     }
 
-    public Nota(String titulo, String conteudo) {
+    public Nota(String titulo, String conteudo, String endereco) {
         this.titulo = titulo;
         this.conteudo = conteudo;
+        this.endereco = endereco;
     }
 
     public Nota(String titulo, String conteudo, int dono) {

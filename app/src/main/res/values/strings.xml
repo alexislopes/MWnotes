@@ -40,6 +40,8 @@
     <!- -->
     <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
     <string name="title_activity_maps">Map</string>
+    <string name="Endereço">Endereço</string>
+    <string name="google_maps_api_key">AIzaSyDIoyl48T6r8uVOLSmKJHoCAYVKe7ydaU8</string>
 
     <!--FIM DE VALORES DO ARQUIVO ACTIVITY_CADASTRO.XML -->
 

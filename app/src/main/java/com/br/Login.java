@@ -51,6 +51,9 @@ public class Login extends AppCompatActivity implements Runnable {
             startActivity(mudaTela);
         }
     });
+
+    nameInput.setText("alexis");
+    passwordInput.setText("1234");
   }
 
   public void ligaJavaXML() {

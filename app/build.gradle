@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.br.activity_note.mw.mwnotes"
+        applicationId "br.com.mwnotes"
         minSdkVersion 15
         targetSdkVersion 28
         versionCode 1
@@ -16,22 +16,34 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+
+
 }
 
 dependencies {
+    implementation project(':placesautocomplete')
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:appcompat-v7:28.0.0-alpha1'
-    implementation 'com.android.support:design:28.0.0-alpha1'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    implementation 'com.google.android.gms:play-services-ads:17.1.1'
     implementation 'com.google.android.gms:play-services-maps:16.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation files('libs/ksoap2-android-assembly-3.6.1-jar-with-dependencies.jar')
+    //implementation files('libs/ksoap2-android-assembly-3.6.1-jar-with-dependencies.jar')
+    //implementation 'com.google.code.ksoap2-android:ksoap2-android-assembly:3.6.2'
     implementation 'com.google.code.gson:gson:2.8.5'
-    // https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver
-    implementation group: 'org.mongodb', name: 'mongo-java-driver', version: '1.3'
+    implementation 'com.jakewharton:butterknife:8.4.0'
+    // https://mvnrepository.com/artifact/com.android.support/appcompat-v7
+    implementation group: 'com.android.support', name: 'appcompat-v7', version: '28.0.0'
+
+    // https://mvnrepository.com/artifact/com.android.support/support-media-compat
+    implementation group: 'com.android.support', name: 'support-media-compat', version: '28.0.0'
+
+    // https://mvnrepository.com/artifact/com.android.support/support-v4
+    implementation group: 'com.android.support', name: 'support-v4', version: '28.0.0'
 
 
+    implementation project(':placesautocomplete')
 }
